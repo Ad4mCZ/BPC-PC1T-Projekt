@@ -238,80 +238,75 @@
   <object class="GtkWindow" id="Second_Window">
     <property name="name">secondWin</property>
     <property name="can-focus">False</property>
+    <property name="default-width">1280</property>
+    <property name="default-height">720</property>
     <child>
-      <object class="GtkBox" id="secondWina">
-        <property name="name">Test</property>
+      <object class="GtkBox">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkLabel" id="Project_Name1">
+          <object class="GtkLabel" id="Otazka_Label">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="margin-left">10</property>
-            <property name="margin-right">10</property>
-            <property name="margin-start">10</property>
-            <property name="margin-end">10</property>
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="margin-start">30</property>
+            <property name="margin-end">30</property>
+            <property name="margin-top">30</property>
+            <property name="margin-bottom">20</property>
             <property name="hexpand">True</property>
             <property name="vexpand">True</property>
-            <property name="label" translatable="yes">Mega velkej napicu test</property>
-            <attributes>
-              <attribute name="font-desc" value="Noto Sans Tifinagh Hawad Bold 26"/>
-              <attribute name="weight" value="semibold"/>
-              <attribute name="variant" value="all-small-caps"/>
-              <attribute name="stretch" value="normal"/>
-            </attributes>
+            <property name="label" translatable="yes">Otázka</property>
+            <property name="use-markup">True</property>
+            <property name="wrap">True</property>
+            <property name="wrap-mode">char</property>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="padding">10</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="Login_Box1">
+          <object class="GtkButtonBox">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="halign">center</property>
-            <property name="valign">center</property>
-            <property name="margin-left">10</property>
-            <property name="margin-right">10</property>
-            <property name="margin-start">10</property>
-            <property name="margin-end">10</property>
-            <property name="margin-top">45</property>
-            <property name="margin-bottom">45</property>
+            <property name="halign">start</property>
+            <property name="valign">start</property>
+            <property name="margin-start">30</property>
             <property name="hexpand">True</property>
             <property name="vexpand">True</property>
             <property name="orientation">vertical</property>
-            <property name="spacing">30</property>
+            <property name="spacing">9</property>
+            <property name="layout-style">start</property>
             <child>
-              <object class="GtkComboBoxText" id="Test_Select1">
+              <object class="GtkRadioButton" id="radio1">
+                <property name="label" translatable="yes">radiobutton</property>
                 <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="hexpand">False</property>
-                <property name="vexpand">False</property>
-                <property name="active">0</property>
-                <property name="active-id">1</property>
-                <items>
-                  <item id="1" translatable="yes">Matika</item>
-                  <item id="2" translatable="yes">Fyzika</item>
-                  <item id="3" translatable="yes">Elektrotechnika</item>
-                </items>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
+                <property name="active">True</property>
+                <property name="draw-indicator">True</property>
+                <signal name="toggled" handler="on_radio1_toggled" swapped="no"/>
               </object>
               <packing>
-                <property name="expand">False</property>
+                <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="Instructions1">
+              <object class="GtkRadioButton" id="radio2">
+                <property name="label" translatable="yes">radiobutton</property>
                 <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="hexpand">False</property>
-                <property name="vexpand">False</property>
-                <property name="label" translatable="yes">Zadejte jméno a příjmení!</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
+                <property name="active">True</property>
+                <property name="draw-indicator">True</property>
+                <property name="group">radio1</property>
+                <signal name="toggled" handler="on_radio2_toggled" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -320,17 +315,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="Given_Name1">
+              <object class="GtkRadioButton" id="radio3">
+                <property name="label" translatable="yes">radiobutton</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="hexpand">True</property>
-                <property name="vexpand">True</property>
-                <property name="xalign">0.5</property>
-                <property name="placeholder-text" translatable="yes">Jmeno</property>
-                <property name="input-purpose">name</property>
-                <property name="input-hints">GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
+                <property name="receives-default">False</property>
+                <property name="active">True</property>
+                <property name="draw-indicator">True</property>
+                <property name="group">radio1</property>
+                <signal name="toggled" handler="on_radio3_toggled" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -339,15 +332,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="Family_Name1">
+              <object class="GtkRadioButton" id="radio4">
+                <property name="label" translatable="yes">radiobutton</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="xalign">0.5</property>
-                <property name="placeholder-text" translatable="yes">Prijmeni</property>
-                <property name="input-purpose">name</property>
-                <property name="input-hints">GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
+                <property name="receives-default">False</property>
+                <property name="active">True</property>
+                <property name="draw-indicator">True</property>
+                <property name="group">radio1</property>
+                <signal name="toggled" handler="on_radio4_toggled" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -355,27 +348,27 @@
                 <property name="position">3</property>
               </packing>
             </child>
-            <child>
-              <object class="GtkButton" id="Confirm_Button1">
-                <property name="label" translatable="yes">Potvrdit</property>
-                <property name="visible">True</property>
-                <property name="sensitive">False</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="halign">center</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">4</property>
-              </packing>
-            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">button</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="halign">end</property>
+            <property name="valign">center</property>
+            <property name="margin-end">20</property>
           </object>
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="padding">20</property>
-            <property name="position">1</property>
+            <property name="position">2</property>
           </packing>
         </child>
       </object>

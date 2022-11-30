@@ -181,7 +181,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
-                <signal name="clicked" handler="on_Popup_Yes_clicked" object="Main_Box" swapped="no"/>
+                <signal name="clicked" handler="on_Popup_Yes_clicked" object="Main_Window" swapped="no"/>
                 <signal name="clicked" handler="on_Popup_Yes_clicked_add" object="Second_Window" swapped="no"/>
               </object>
               <packing>

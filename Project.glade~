@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="Main_Window">
+    <property name="name">Test</property>
+    <property name="can-focus">False</property>
+    <property name="default-width">1280</property>
+    <property name="default-height">480</property>
+    <property name="startup-id">1</property>
+    <child>
+      <object class="GtkBox" id="Main_Box">
+        <property name="name">Test</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="Project_Name">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="label" translatable="yes">Mega velkej napicu test</property>
+            <attributes>
+              <attribute name="font-desc" value="Noto Sans Tifinagh Hawad Bold 26"/>
+              <attribute name="weight" value="semibold"/>
+              <attribute name="variant" value="all-small-caps"/>
+              <attribute name="stretch" value="normal"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">10</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="Login_Box">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="margin-top">45</property>
+            <property name="margin-bottom">45</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">30</property>
+            <child>
+              <object class="GtkComboBoxText" id="Test_Select">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">False</property>
+                <property name="vexpand">False</property>
+                <property name="active">0</property>
+                <property name="active-id">1</property>
+                <items>
+                  <item id="1" translatable="yes">Matika</item>
+                  <item id="2" translatable="yes">Fyzika</item>
+                  <item id="3" translatable="yes">Elektrotechnika</item>
+                </items>
+                <signal name="changed" handler="on_Test_select_changed" object="Confirm_Button" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="Instructions">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">False</property>
+                <property name="vexpand">False</property>
+                <property name="label" translatable="yes">Zadejte jméno a příjmení!</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="Given_Name">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="xalign">0.5</property>
+                <property name="placeholder-text" translatable="yes">Jmeno</property>
+                <property name="input-purpose">name</property>
+                <property name="input-hints">GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
+                <signal name="key-press-event" handler="on_Given_Name_key_press_event" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="Family_Name">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="xalign">0.5</property>
+                <property name="placeholder-text" translatable="yes">Prijmeni</property>
+                <property name="input-purpose">name</property>
+                <property name="input-hints">GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
+                <signal name="key-press-event" handler="on_Family_Name_key_press_event" object="Confirm_Button" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="Confirm_Button">
+                <property name="label" translatable="yes">Potvrdit</property>
+                <property name="visible">True</property>
+                <property name="sensitive">False</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="halign">center</property>
+                <signal name="clicked" handler="on_Confirm_Button_clicked" object="Popup_Confirm" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="padding">20</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkDialog" id="Popup_Confirm">
+    <property name="name">Response</property>
+    <property name="can-focus">False</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="default-width">420</property>
+    <property name="default-height">250</property>
+    <property name="type-hint">dialog</property>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="Popup_Bo">
+        <property name="can-focus">False</property>
+        <property name="halign">center</property>
+        <property name="valign">center</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">40</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="Popup_Button_Box">
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="margin-end">10</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">False</property>
+            <property name="layout-style">end</property>
+            <child>
+              <object class="GtkButton" id="Popup_Yes">
+                <property name="label" translatable="yes">Ano</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <signal name="clicked" handler="on_Popup_Yes_clicked" object="Main_Box" swapped="no"/>
+                <signal name="clicked" handler="on_Popup_Yes_clicked_add" object="Second_Window" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="Popup_No">
+                <property name="label" translatable="yes">Ne</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">20</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="Popup_Label">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="label" translatable="yes">Jste si jisti?</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="1">Popup_Yes</action-widget>
+      <action-widget response="0">Popup_No</action-widget>
+    </action-widgets>
+  </object>
+  <object class="GtkWindow" id="Second_Window">
+    <property name="name">secondWin</property>
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkBox" id="secondWina">
+        <property name="name">Test</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="Project_Name1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-left">10</property>
+            <property name="margin-right">10</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="label" translatable="yes">Mega velkej napicu test</property>
+            <attributes>
+              <attribute name="font-desc" value="Noto Sans Tifinagh Hawad Bold 26"/>
+              <attribute name="weight" value="semibold"/>
+              <attribute name="variant" value="all-small-caps"/>
+              <attribute name="stretch" value="normal"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">10</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="Login_Box1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="margin-left">10</property>
+            <property name="margin-right">10</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="margin-top">45</property>
+            <property name="margin-bottom">45</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">30</property>
+            <child>
+              <object class="GtkComboBoxText" id="Test_Select1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">False</property>
+                <property name="vexpand">False</property>
+                <property name="active">0</property>
+                <property name="active-id">1</property>
+                <items>
+                  <item id="1" translatable="yes">Matika</item>
+                  <item id="2" translatable="yes">Fyzika</item>
+                  <item id="3" translatable="yes">Elektrotechnika</item>
+                </items>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="Instructions1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">False</property>
+                <property name="vexpand">False</property>
+                <property name="label" translatable="yes">Zadejte jméno a příjmení!</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="Given_Name1">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="xalign">0.5</property>
+                <property name="placeholder-text" translatable="yes">Jmeno</property>
+                <property name="input-purpose">name</property>
+                <property name="input-hints">GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="Family_Name1">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="xalign">0.5</property>
+                <property name="placeholder-text" translatable="yes">Prijmeni</property>
+                <property name="input-purpose">name</property>
+                <property name="input-hints">GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="Confirm_Button1">
+                <property name="label" translatable="yes">Potvrdit</property>
+                <property name="visible">True</property>
+                <property name="sensitive">False</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="halign">center</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="padding">20</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

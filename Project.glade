@@ -238,10 +238,10 @@
   <object class="GtkWindow" id="Second_Window">
     <property name="name">secondWin</property>
     <property name="can-focus">False</property>
-    <property name="default-width">1280</property>
-    <property name="default-height">720</property>
+    <property name="default-width">480</property>
+    <property name="default-height">270</property>
     <child>
-      <object class="GtkBox">
+      <object class="GtkBox" id="Test_Box">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
@@ -251,7 +251,7 @@
             <property name="can-focus">False</property>
             <property name="halign">start</property>
             <property name="valign">center</property>
-            <property name="margin-start">30</property>
+            <property name="margin-start">29</property>
             <property name="margin-end">30</property>
             <property name="margin-top">30</property>
             <property name="margin-bottom">20</property>
@@ -270,7 +270,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButtonBox">
+          <object class="GtkButtonBox" id="Odpovedi">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="halign">start</property>
@@ -313,7 +313,7 @@
                 <property name="group">radio1</property>
                 <signal name="toggled" handler="on_radio2_toggled" swapped="no"/>
                 <child>
-                  <object class="GtkLabel">
+                  <object class="GtkLabel" id="Radio_Label2">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="label" translatable="yes">label</property>
@@ -336,7 +336,7 @@
                 <property name="group">radio1</property>
                 <signal name="toggled" handler="on_radio3_toggled" swapped="no"/>
                 <child>
-                  <object class="GtkLabel">
+                  <object class="GtkLabel" id="Radio_Label3">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="label" translatable="yes">label</property>
@@ -359,7 +359,7 @@
                 <property name="group">radio1</property>
                 <signal name="toggled" handler="on_radio4_toggled" swapped="no"/>
                 <child>
-                  <object class="GtkLabel">
+                  <object class="GtkLabel" id="Radio_Label4">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="label" translatable="yes">label</property>
@@ -380,14 +380,16 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton">
+          <object class="GtkButton" id="Next_button">
             <property name="label" translatable="yes">button</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
             <property name="halign">end</property>
             <property name="valign">center</property>
-            <property name="margin-end">20</property>
+            <property name="margin-end">40</property>
+            <property name="margin-bottom">30</property>
+            <signal name="clicked" handler="on_Next_button_clicked" object="__glade_unnamed_4" swapped="no"/>
           </object>
           <packing>
             <property name="expand">True</property>

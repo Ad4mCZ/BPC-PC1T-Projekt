@@ -3,6 +3,7 @@
 #define MAX_LENGTH 20
 char data[MAX_LINES][MAX_LENGTH] = {{0}}; // 2d pole pro uchovavani radku
 char otazky[MAX_LINES][MAX_LENGTH] = {{0}};
+char odpovedi[MAX_LINES][MAX_LENGTH] = {{0}};
 
 void Open_File(char *filename)
 {
@@ -26,5 +27,27 @@ void Open_File(char *filename)
 
     // GetData(); Zeptani se na udaje o uzivateli
 
-   
+    for (int i = 0, indexOtazky = 0; i < line; i++) // prochazeni dat
+    {
+        for (int j = 0; j < MAX_LENGTH; j++)
+        {
+            if (data[i][j] == '[')
+            {
+                for (int k = 1; data[i][j + k] != ']'; k++)
+                {
+                    otazky[indexOtazky][k - 1] = data[i][j + k];
+                }
+                indexOtazky++;
+            }
+            else if (data[i][j] == '(')
+            {
+                for (int k = 0; data[i][j + k] != ')'; k++)
+                {
+                    odpovedi[indexOtazky][k - 1] = data[i][j + k];
+                    g_print("%s", odpovedi[k]);
+                }
+                indexOtazky++;
+            }
+        }
+    }
 }

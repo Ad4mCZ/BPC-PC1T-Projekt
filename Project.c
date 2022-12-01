@@ -1,8 +1,7 @@
 #include <gtk/gtk.h>
 #include "on_confirm_button_clicked.h"
 #include "on_key_press_check.h"
-#define MAX_LINES 100
-#define MAX_LENGTH 20
+#include "open_file.h"
 
 GtkWidget *Family_name;
 GtkWidget *Given_name;
@@ -42,26 +41,9 @@ int main(int argc, char *argv[])
     gtk_builder_connect_signals(builder, NULL);
     selected = gtk_combo_box_get_active_id(GTK_COMBO_BOX(Test_select));
 
-    char data[MAX_LINES][MAX_LENGTH] = {{0}}; // 2d pole pro uchovavani radku
-    char otazky[MAX_LINES][MAX_LENGTH] = {{0}};
+  
 
-    FILE *file = fopen("questions.txt", "r"); // otevreni souboru
-    if (file == NULL)                         // kontrola jestli existuje
-    {
-        printf("no such file.");
-        return 1;
-    }
-
-    int line = 0; // pocitani radku
-
-    while (!feof(file) && !ferror(file)) // pokud neni end of file nebo chyba
-    {
-        if (fgets(data[line], MAX_LENGTH, file) != NULL) // kontrola jestli nejsme na konci
-        {
-            line++;
-        }
-    }
-    fclose(file); // zavreni souboru
+   Open_File("questions.txt");
 
     // GetData(); Zeptani se na udaje o uzivateli
 

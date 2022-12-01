@@ -389,7 +389,7 @@
             <property name="valign">center</property>
             <property name="margin-end">40</property>
             <property name="margin-bottom">30</property>
-            <signal name="clicked" handler="on_Next_button_clicked" object="__glade_unnamed_4" swapped="no"/>
+            <signal name="clicked" handler="on_Next_button_clicked" object="Test_Box" swapped="no"/>
           </object>
           <packing>
             <property name="expand">True</property>

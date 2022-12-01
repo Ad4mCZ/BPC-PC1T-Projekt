@@ -3,7 +3,7 @@
 int check = 0;
 const gchar *selected;
 
-// TODO PREPSAT LOGIN_BOX
+
 
 gboolean on_Given_Name_key_press_event(GtkWidget *Given_Name, GdkEventKey *event)
 {

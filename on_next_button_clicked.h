@@ -1,4 +1,3 @@
-
 GtkWidget *Radio1;
 GtkWidget *Radio2;
 GtkWidget *Radio3;

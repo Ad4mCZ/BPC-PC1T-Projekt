@@ -38,13 +38,13 @@ int main(int argc, char *argv[])
     gtk_builder_connect_signals(builder, NULL);
 
     g_timeout_add_seconds(1, (GSourceFunc)Check, NULL);
-
+Open_File("questions.txt");
     g_object_unref(G_OBJECT(builder));
     gtk_widget_show(window);
 
     gtk_main();
 
-    Open_File("questions.txt");
+    
 
     return 0;
 }

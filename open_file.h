@@ -1,7 +1,7 @@
 #define MAX_LINES 100
 #define MAX_LENGTH 20
 char data[MAX_LINES][MAX_LENGTH] = {{0}}; // 2d pole pro uchovavani radku
-char otazky[][MAX_LENGTH] = {{0}};
+char otazky[MAX_LINES][MAX_LENGTH] = {{0}};
 char odpovedi[MAX_LINES][MAX_LENGTH] = {{0}};
 
 void Open_File(char *filename)
@@ -32,24 +32,18 @@ void Open_File(char *filename)
             {
                 for (int k = 1; data[i][j + k] != ']'; k++)
                 {
-                    otazky[indexOtazky][k-1] = data[i][j + k];
+                    otazky[indexOtazky][k - 1] = data[i][j + k];
                 }
                 indexOtazky++;
             }
             else if (data[i][j] == '(')
             {
-                for (int l = 1; data[i][j + l] != ')'; l++)
+                for (int k = 1; data[i][j + k] != ')'; k++)
                 {
-                    odpovedi[indexOdpovedi][l-1] = data[i][j + l];
+                    odpovedi[indexOdpovedi][k - 1] = data[i][j + k];
                 }
                 indexOdpovedi++;
             }
         }
     }
-
-    for (int i = 0; i < 30; i++)
-    {
-       g_print("%s", odpovedi[i]);
-    }
-    
 }

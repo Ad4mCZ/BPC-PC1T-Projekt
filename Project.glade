@@ -276,6 +276,7 @@
     <property name="default-width">480</property>
     <property name="default-height">270</property>
     <property name="icon-name">dialog-question</property>
+    <signal name="show" handler="on_Second_Window_show" object="Test_Box" swapped="no"/>
     <child>
       <object class="GtkBox" id="Test_Box">
         <property name="visible">True</property>

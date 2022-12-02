@@ -40,16 +40,9 @@ int main(int argc, char *argv[])
 
     Open_File("questions.txt");
 
-    // GetData(); Zeptani se na udaje o uzivateli
-
-    gtk_label_set_text(GTK_LABEL(Otazka_label), (const gchar *)otazky[0]);
-    gtk_label_set_text(GTK_LABEL(Radio_label1), (const gchar *)odpovedi[1]);
-    gtk_label_set_text(GTK_LABEL(Radio_label2), (const gchar *)odpovedi[2]);
-    gtk_label_set_text(GTK_LABEL(Radio_label3), (const gchar *)odpovedi[3]);
-    gtk_label_set_text(GTK_LABEL(Radio_label4), (const gchar *)odpovedi[4]);
     g_object_unref(G_OBJECT(builder));
     gtk_widget_show(window);
     gtk_main();
 
     return 0;
-};
+}

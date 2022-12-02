@@ -25,9 +25,7 @@ void Open_File(char *filename)
     }
     fclose(file); // zavreni souboru
 
-    // GetData(); Zeptani se na udaje o uzivateli
-
-    for (int i = 0, indexOtazky = 0; i < line; i++) // prochazeni dat
+    for (int i = 0, indexOtazky = 0, indexOdpovedi = 0; i < line; i++) // prochazeni dat
     {
         for (int j = 0; j < MAX_LENGTH; j++)
         {
@@ -41,12 +39,11 @@ void Open_File(char *filename)
             }
             else if (data[i][j] == '(')
             {
-                for (int k = 0; data[i][j + k] != ')'; k++)
+                for (int k = 1; data[i][j + k] != ')'; k++)
                 {
-                    odpovedi[indexOtazky][k - 1] = data[i][j + k];
-                    g_print("%s", odpovedi[k]);
+                    odpovedi[indexOdpovedi][k - 1] = data[i][j + k];
                 }
-                indexOtazky++;
+                indexOdpovedi++;
             }
         }
     }

@@ -64,7 +64,7 @@
                   <item id="2" translatable="yes">Fyzika</item>
                   <item id="3" translatable="yes">Elektrotechnika</item>
                 </items>
-                <signal name="changed" handler="on_Test_select_changed" object="Confirm_Button" swapped="no"/>
+                <signal name="changed" handler="on_Test_Select_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -78,7 +78,7 @@
                 <property name="can-focus">False</property>
                 <property name="hexpand">False</property>
                 <property name="vexpand">False</property>
-                <property name="label" translatable="yes">Zadejte jméno a příjmení!</property>
+                <property name="label" translatable="yes">Zadejte jméno,příjmení,věk a pohlaví</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -90,15 +90,13 @@
               <object class="GtkEntry" id="Given_Name">
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
                 <property name="hexpand">True</property>
                 <property name="vexpand">True</property>
                 <property name="xalign">0.5</property>
-                <property name="placeholder-text" translatable="yes">Jmeno</property>
+                <property name="placeholder-text" translatable="yes">Jméno</property>
                 <property name="input-purpose">name</property>
                 <property name="input-hints">GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
-                <signal name="key-press-event" handler="on_Given_Name_key_press_event" object="Confirm_Button" swapped="no"/>
+                <signal name="key-press-event" handler="on_Given_Name_key_press_event" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -110,18 +108,58 @@
               <object class="GtkEntry" id="Family_Name">
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
-                <property name="halign">center</property>
                 <property name="valign">center</property>
                 <property name="xalign">0.5</property>
-                <property name="placeholder-text" translatable="yes">Prijmeni</property>
+                <property name="placeholder-text" translatable="yes">Příjmení</property>
                 <property name="input-purpose">name</property>
                 <property name="input-hints">GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
-                <signal name="key-press-event" handler="on_Family_Name_key_press_event" object="Confirm_Button" swapped="no"/>
+                <signal name="key-press-event" handler="on_Family_Name_key_press_event" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="Age">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="xalign">0.5</property>
+                <property name="caps-lock-warning">False</property>
+                <property name="placeholder-text" translatable="yes">18</property>
+                <property name="input-purpose">number</property>
+                <property name="input-hints">GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="Gender">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <items>
+                  <item id="1" translatable="yes">Muž</item>
+                  <item id="2" translatable="yes">Žena</item>
+                  <item id="3" translatable="yes">Útočná helikoptéra</item>
+                  <item id="4" translatable="yes">Khorne</item>
+                  <item id="5" translatable="yes">Nurgle</item>
+                  <item id="6" translatable="yes">Slaanesh</item>
+                  <item id="7" translatable="yes">Tzeentch</item>
+                  <item id="8" translatable="yes">Bipolární tranzistor</item>
+                  <item id="9" translatable="yes">Jedi</item>
+                  <item id="10" translatable="yes">Sith</item>
+                  <item id="11" translatable="yes">Cthulhu</item>
+                  <item id="12" translatable="yes">Mentální porucha</item>
+                </items>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">5</property>
               </packing>
             </child>
             <child>
@@ -137,7 +175,7 @@
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">True</property>
-                <property name="position">4</property>
+                <property name="position">6</property>
               </packing>
             </child>
           </object>

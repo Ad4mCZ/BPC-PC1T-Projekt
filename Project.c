@@ -1,13 +1,9 @@
 #include <gtk/gtk.h>
+#include "login_box_check.h"
 #include "on_confirm_button_clicked.h"
-#include "on_key_press_check.h"
 #include "open_file.h"
 #include "on_next_button_clicked.h"
 
-GtkWidget *Family_name;
-GtkWidget *Given_name;
-GtkWidget *Confirm_button;
-GtkWidget *Test_select;
 GtkWidget *window;
 GtkWidget *Second_window;
 
@@ -20,10 +16,10 @@ int main(int argc, char *argv[])
     gtk_builder_add_from_file(builder, "Project.glade", NULL);
 
     window = GTK_WIDGET(gtk_builder_get_object(builder, "Main_Window"));
-    Family_name = GTK_WIDGET(gtk_builder_get_object(builder, "Family_Name"));
-    Given_name = GTK_WIDGET(gtk_builder_get_object(builder, "Given_Name"));
+    Family_name = GTK_ENTRY(gtk_builder_get_object(builder, "Family_Name"));
+    Given_name = GTK_ENTRY(gtk_builder_get_object(builder, "Given_Name"));
     Confirm_button = GTK_WIDGET(gtk_builder_get_object(builder, "Confirm_Button"));
-    Test_select = GTK_WIDGET(gtk_builder_get_object(builder, "Test_Select"));
+    Test_select = GTK_COMBO_BOX(gtk_builder_get_object(builder, "Test_Select"));
     Second_window = GTK_WIDGET(gtk_builder_get_object(builder, "Second_Window"));
     Radio1 = GTK_WIDGET(gtk_builder_get_object(builder, "radio1"));
     Radio2 = GTK_WIDGET(gtk_builder_get_object(builder, "radio2"));
@@ -34,15 +30,21 @@ int main(int argc, char *argv[])
     Radio_label2 = GTK_WIDGET(gtk_builder_get_object(builder, "Radio_Label2"));
     Radio_label3 = GTK_WIDGET(gtk_builder_get_object(builder, "Radio_Label3"));
     Radio_label4 = GTK_WIDGET(gtk_builder_get_object(builder, "Radio_Label4"));
+    age = GTK_ENTRY(gtk_builder_get_object(builder, "Age"));
+    Gender_select = GTK_COMBO_BOX(gtk_builder_get_object(builder, "Gender"));
+    Login_box = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Box"));
+
     gtk_widget_add_events(window, GDK_KEY_PRESS_MASK);
     gtk_builder_connect_signals(builder, NULL);
-    selected = gtk_combo_box_get_active_id(GTK_COMBO_BOX(Test_select));
 
-    Open_File("questions.txt");
+    g_timeout_add_seconds(1, (GSourceFunc)Check, NULL);
 
     g_object_unref(G_OBJECT(builder));
     gtk_widget_show(window);
+
     gtk_main();
+
+    Open_File("questions.txt");
 
     return 0;
 }

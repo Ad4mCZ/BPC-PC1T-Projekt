@@ -1,4 +1,3 @@
-
 #define MAX_LINES 100
 #define MAX_LENGTH 20
 char data[MAX_LINES][MAX_LENGTH] = {{0}}; // 2d pole pro uchovavani radku

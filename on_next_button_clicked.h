@@ -22,7 +22,6 @@ void on_Second_Window_show(GtkWidget *Second_window, GtkBox *Test_Box) // vypsan
 
 void on_Next_button_clicked(GtkButton *Next_button, GtkBox *Test_Box)
 {
-
    // srand(time(NULL));
    //  int random = rand() % 3;
    //  printf("%i", random);

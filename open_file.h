@@ -48,26 +48,9 @@ void Open_File(char *filename)
             }
         }
     }
-    for (int i = 0, indexOdpovedi = 0; i < sizeof(odpovedi) / sizeof(odpovedi[0]); i++)
-    {
-        for (int j = 0; j < 10; j++)
-        {
-            if (odpovedi[i][j] == '!')
-            {
-                for (int k = 0; odpovedi[i][j + k] != '\0'; k++)
-                {
-                    spravne_odpovedi[indexOdpovedi][k - 1] = odpovedi[i][j + k];
-                }
-                indexOdpovedi++;
-            }
-        }
-    }
+
     for (int i = 0; i < 15; i++)
     {
         g_print("%s \t", odpovedi[i]);
-    }
-    for (int i = 0; i < 15; i++)
-    {
-        g_print("%s \t", spravne_odpovedi[i]);
     }
 }

@@ -13,6 +13,8 @@ GtkButton *Previous_button;
 int currentAnswer = 0;
 int currentQuestion = 0;
 int toggledRadio = 0;
+
+int body = 0;
 void on_Second_Window_show(GtkWidget *Second_window, GtkBox *Test_Box) // vypsani prvni otazky
 {
    char tmpOdpovedi[sizeof(odpovedi) / sizeof(odpovedi[0])][sizeof(odpovedi[0]) / sizeof(char)] = {{0}};
@@ -61,36 +63,40 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkBox *Test_Box)
       }
    }
 
-   g_print("%i \t", currentQuestion);
-   g_print(SpravneOdpovedi[currentQuestion]);
+   // g_print("%i \t", currentQuestion);
+   // g_print(SpravneOdpovedi[currentQuestion]);
 
    switch (toggledRadio)
    {
    case 1:
       if (strcmp(SpravneOdpovedi[currentQuestion], radio1) == 0)
       {
-         g_print("Hi");
+         body++;
+         g_print("mate %i", body);
       }
       break;
 
    case 2:
       if (strcmp(SpravneOdpovedi[currentQuestion], radio2) == 0)
       {
-         g_print("Hi");
+         body++;
+         g_print("mate %i", body);
       }
       break;
 
    case 3:
       if (strcmp(SpravneOdpovedi[currentQuestion], radio3) == 0)
       {
-         g_print("Hi");
+         body++;
+         g_print("mate %i", body);
       }
       break;
 
    case 4:
       if (strcmp(SpravneOdpovedi[currentQuestion], radio4) == 0)
       {
-         g_print("Hi");
+         body++;
+         g_print("mate %i", body);
       }
       break;
 

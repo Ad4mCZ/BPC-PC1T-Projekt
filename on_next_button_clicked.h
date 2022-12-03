@@ -7,6 +7,8 @@ GtkWidget *Radio_label1;
 GtkWidget *Radio_label2;
 GtkWidget *Radio_label3;
 GtkWidget *Radio_label4;
+GtkButton *Next_button;
+GtkButton *Previous_button;
 
 int currentAnswer = 0;
 int currentQuestion = 0;
@@ -34,6 +36,10 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkBox *Test_Box)
       gtk_label_set_text(GTK_LABEL(Radio_label2), (const gchar *)odpovedi[1 + currentAnswer]);
       gtk_label_set_text(GTK_LABEL(Radio_label3), (const gchar *)odpovedi[2 + currentAnswer]);
       gtk_label_set_text(GTK_LABEL(Radio_label4), (const gchar *)odpovedi[3 + currentAnswer]);
+       if (currentQuestion==2)
+      {
+         gtk_button_set_label(Next_button,"konec");
+      }
    }
 }
 void on_Previous_button_clicked(GtkButton *Previous_button, GtkBox *Test_Box)
@@ -47,5 +53,10 @@ void on_Previous_button_clicked(GtkButton *Previous_button, GtkBox *Test_Box)
       gtk_label_set_text(GTK_LABEL(Radio_label2), (const gchar *)odpovedi[1 + currentAnswer]);
       gtk_label_set_text(GTK_LABEL(Radio_label3), (const gchar *)odpovedi[2 + currentAnswer]);
       gtk_label_set_text(GTK_LABEL(Radio_label4), (const gchar *)odpovedi[3 + currentAnswer]);
+     
+       if (currentQuestion!=2)
+      {
+         gtk_button_set_label(Next_button,"další");
+      }
    }
 }

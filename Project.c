@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
     age = GTK_ENTRY(gtk_builder_get_object(builder, "Age"));
     Gender_select = GTK_COMBO_BOX(gtk_builder_get_object(builder, "Gender"));
     Login_box = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Box"));
+    Next_button = GTK_BUTTON(gtk_builder_get_object(builder, "Next_Button"));
+    Previous_button = GTK_BUTTON(gtk_builder_get_object(builder, "Previous_Button"));
 
     gtk_widget_add_events(window, GDK_KEY_PRESS_MASK);
     gtk_builder_connect_signals(builder, NULL);

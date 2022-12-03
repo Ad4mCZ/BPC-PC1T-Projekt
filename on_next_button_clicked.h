@@ -24,9 +24,8 @@ void on_Second_Window_show(GtkWidget *Second_window, GtkBox *Test_Box) // vypsan
 
 void on_Next_button_clicked(GtkButton *Next_button, GtkBox *Test_Box)
 {
-   // srand(time(NULL));
-   //  int random = rand() % 3;
-   //  printf("%i", random);
+   g_print("%s", spravne_odpovedi[currentQuestion]);
+
    if (otazky[currentQuestion + 1][0] != '\0')
    {
       currentAnswer += 4;
@@ -42,6 +41,19 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkBox *Test_Box)
       }
       gtk_widget_set_sensitive(GTK_WIDGET(Previous_button), TRUE);
    }
+
+   char *spravnaOdpoved[1] = {spravne_odpovedi[currentAnswer]};
+   char radio1[1] = gtk_label_get_text(GTK_LABEL(Radio_label4));
+   g_print(*spravnaOdpoved);
+   // switch (spravnaOdpoved) //NUTNO DODELAT SE SIMONEM
+   // {
+   // case radio1:
+   //    g_print("Hi");
+   //    break;
+
+   // default:
+   //    break;
+   // }
 }
 void on_Previous_button_clicked(GtkButton *Previous_button, GtkBox *Test_Box)
 {

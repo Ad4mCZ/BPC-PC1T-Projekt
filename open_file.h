@@ -41,7 +41,7 @@ void Open_File(char *filename)
             {
                 for (int k = 1; data[i][j + k] != ')'; k++)
                 {
-
+                    // TADY DOPLNIT ZE POKUD PRVNI ZNAK JE ! TAK HO NECIST, ALE NEVIM JAK @Simon
                     odpovedi[indexOdpovedi][k - 1] = data[i][j + k];
                 }
                 indexOdpovedi++;
@@ -61,5 +61,13 @@ void Open_File(char *filename)
                 indexOdpovedi++;
             }
         }
+    }
+    for (int i = 0; i < 15; i++)
+    {
+        g_print("%s \t", odpovedi[i]);
+    }
+    for (int i = 0; i < 15; i++)
+    {
+        g_print("%s \t", spravne_odpovedi[i]);
     }
 }

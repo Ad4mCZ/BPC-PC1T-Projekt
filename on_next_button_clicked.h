@@ -12,7 +12,7 @@ GtkButton *Previous_button;
 
 int currentAnswer = 0;
 int currentQuestion = 0;
-
+int toggledRadio = 0;
 void on_Second_Window_show(GtkWidget *Second_window, GtkBox *Test_Box) // vypsani prvni otazky
 {
    char tmpOdpovedi[sizeof(odpovedi) / sizeof(odpovedi[0])][sizeof(odpovedi[0]) / sizeof(char)] = {{0}};
@@ -43,20 +43,60 @@ void on_Second_Window_show(GtkWidget *Second_window, GtkBox *Test_Box) // vypsan
 
 void on_Next_button_clicked(GtkButton *Next_button, GtkBox *Test_Box)
 {
-   // g_print("%s", spravne_odpovedi[currentQuestion]);
-   // char *spravnaOdpoved[1] = {spravne_odpovedi[currentQuestion]};
    const gchar *radio1 = {gtk_label_get_text(GTK_LABEL(Radio_label1))};
    const gchar *radio2 = {gtk_label_get_text(GTK_LABEL(Radio_label2))};
    const gchar *radio3 = {gtk_label_get_text(GTK_LABEL(Radio_label3))};
    const gchar *radio4 = {gtk_label_get_text(GTK_LABEL(Radio_label4))};
 
-   // g_print("%s \t", *spravnaOdpoved);
-   g_print(radio1);
-   g_print(radio2);
-   g_print(radio3);
-   g_print(radio4);
+   char SpravneOdpovedi[sizeof(otazky) / sizeof(otazky[0])][sizeof(odpovedi[0]) / sizeof(char)] = {{0}};
+   for (int i = 0, index = 0; i < sizeof(SpravneOdpovedi) / sizeof(SpravneOdpovedi[0]); i++)
+   {
+      if (odpovedi[i][0] == '!')
+      {
+         for (int j = 0; j < (sizeof(SpravneOdpovedi[0]) / sizeof(char)) - 1; j++)
+         {
+            SpravneOdpovedi[index][j] = odpovedi[i][j + 1];
+         }
+         index++;
+      }
+   }
 
-   // switch (*spravnaOdpoved[1]) // NUTNO DODELAT se simonem
+   g_print("%i \t", currentQuestion);
+   g_print(SpravneOdpovedi[currentQuestion]);
+
+   switch (toggledRadio)
+   {
+   case 1:
+      if (strcmp(SpravneOdpovedi[currentQuestion], radio1) == 0)
+      {
+         g_print("Hi");
+      }
+      break;
+
+   case 2:
+      if (strcmp(SpravneOdpovedi[currentQuestion], radio2) == 0)
+      {
+         g_print("Hi");
+      }
+      break;
+
+   case 3:
+      if (strcmp(SpravneOdpovedi[currentQuestion], radio3) == 0)
+      {
+         g_print("Hi");
+      }
+      break;
+
+   case 4:
+      if (strcmp(SpravneOdpovedi[currentQuestion], radio4) == 0)
+      {
+         g_print("Hi");
+      }
+      break;
+
+   default:
+      break;
+   }
 
    if (otazky[currentQuestion + 1][0] != '\0')
    {
@@ -134,4 +174,21 @@ void on_Previous_button_clicked(GtkButton *Previous_button, GtkBox *Test_Box)
          gtk_widget_set_sensitive(GTK_WIDGET(Previous_button), FALSE);
       }
    }
+}
+
+void on_radio1_toggled(GtkToggleButton *radio1)
+{
+   toggledRadio = 1;
+}
+void on_radio2_toggled(GtkToggleButton *radio1)
+{
+   toggledRadio = 2;
+}
+void on_radio3_toggled(GtkToggleButton *radio1)
+{
+   toggledRadio = 3;
+}
+void on_radio4_toggled(GtkToggleButton *radio1)
+{
+   toggledRadio = 4;
 }

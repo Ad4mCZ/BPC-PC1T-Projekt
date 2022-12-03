@@ -48,9 +48,4 @@ void Open_File(char *filename)
             }
         }
     }
-
-    for (int i = 0; i < 15; i++)
-    {
-        g_print("%s \t", odpovedi[i]);
-    }
 }

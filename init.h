@@ -23,4 +23,6 @@ void Init()
     Login_box = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Box"));
     Next_button = GTK_BUTTON(gtk_builder_get_object(builder, "Next_Button"));
     Previous_button = GTK_BUTTON(gtk_builder_get_object(builder, "Previous_Button"));
+    Answer_label = GTK_WIDGET(gtk_builder_get_object(builder, "AnswerLabel"));
+    Result_window = GTK_WIDGET(gtk_builder_get_object(builder, "ResultWindow"));
 }

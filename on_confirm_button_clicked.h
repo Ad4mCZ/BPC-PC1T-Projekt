@@ -13,7 +13,7 @@ void on_Confirm_Button_clicked(GtkButton *Confirm_Button, GtkWidget *Popup_Confi
                 gtk_widget_hide(Popup_Confirm);
         }
 
-        g_print("Response is %s\n", response == 1 ? "Ano" : "Ne");
+        // g_print("Response is %s\n", response == 1 ? "Ano" : "Ne");
 }
 
 void on_Popup_Yes_clicked_add(GtkButton *Popup_Yes, GtkWidget *Second_window)

@@ -4,6 +4,7 @@
 #include "open_file.h"
 #include "on_next_button_clicked.h"
 #include "init.h"
+#include <time.h>
 
 int main(int argc, char *argv[])
 {

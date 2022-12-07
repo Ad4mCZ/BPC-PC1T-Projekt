@@ -12,7 +12,8 @@ void on_Confirm_Button_clicked(GtkButton *Confirm_Button, GtkWidget *Popup_Confi
         {
                 gtk_widget_hide(Popup_Confirm);
         }
-
+        int choice = gtk_combo_box_get_active(Test_select);
+        g_print("response %i", choice);
         // g_print("Response is %s\n", response == 1 ? "Ano" : "Ne");
 }
 

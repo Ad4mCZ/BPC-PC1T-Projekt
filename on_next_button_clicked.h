@@ -14,7 +14,7 @@ GtkWidget *Result_window;
 GtkWidget *Correctwrong;
 GtkWidget *Percent_label;
 GtkProgressBar *Correct_bar;
-time_t start, end;
+time_t start, end; // timer
 
 int currentAnswer = 0;
 int currentQuestion = 0;
@@ -24,7 +24,7 @@ char SpravneOdpovedi[sizeof(otazky) / sizeof(otazky[0])][sizeof(odpovedi[0]) / s
 
 void on_Second_Window_show(GtkWidget *Second_Window, GtkBox *Test_Box) // vypsani prvni otazky
 {
-   start = time(NULL);
+   start = time(NULL); // zapnuti timeru
    char tmpOdpovedi[sizeof(odpovedi) / sizeof(odpovedi[0])][sizeof(odpovedi[0]) / sizeof(char)] = {{0}};
    for (int i = 0; i < sizeof(tmpOdpovedi) / sizeof(tmpOdpovedi[0]); i++)
    {
@@ -74,26 +74,18 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkWidget *Second_Window)
    {
    case 1:
       strcpy(userAnswers[currentQuestion], radio1);
-      // g_print("a%s", userAnswers[currentQuestion]);
-
       break;
 
    case 2:
       strcpy(userAnswers[currentQuestion], radio2);
-      // g_print("b%s", userAnswers[currentQuestion]);
-
       break;
 
    case 3:
       strcpy(userAnswers[currentQuestion], radio3);
-      // g_print("c%s", userAnswers[currentQuestion]);
-
       break;
 
    case 4:
       strcpy(userAnswers[currentQuestion], radio4);
-      // g_print("d%s", userAnswers[currentQuestion]);
-
       break;
 
    default:
@@ -136,22 +128,22 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkWidget *Second_Window)
    if (strcmp(gtk_button_get_label(Next_button), "konec") == 0)
    {
 
-      for (int i = 0; i < sizeof(otazky) / sizeof(otazky[0]); i++)
+      for (int i = 0; i < sizeof(otazky) / sizeof(otazky[0]); i++) // kontrola spravnych odpovedi
       {
          if (SpravneOdpovedi[i][0] != '\0' && (strcmp(SpravneOdpovedi[i], userAnswers[i]) == 0))
          {
             body++;
          }
       }
-      end = time(NULL);
+      end = time(NULL); // ukonceni timeru
       double timedouble = difftime(end, start);
-      gtk_widget_show(Result_window);
+      gtk_widget_show(Result_window); // zavreni okna a otevreni okna vysledku
       gtk_widget_hide(Second_Window);
       char bodyArray[40];
       char percent[30];
       char time[50];
       double Percent = (double)body / ((float)currentQuestion + 1);
-      sprintf(bodyArray, "počet správných odpovědí: %d", body);
+      sprintf(bodyArray, "počet správných odpovědí: %d", body); // prevod z intu/floatu na gchar a vypis vysledku
       sprintf(percent, "%0.2lf %%", Percent * 100);
       sprintf(time, "Test ti zabral %0.0f sekund", timedouble);
       gtk_label_set_text(GTK_LABEL(Correct_label), (const gchar *)bodyArray);
@@ -168,7 +160,7 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkWidget *Second_Window)
 
 void on_Previous_button_clicked(GtkButton *Previous_button, GtkWidget *Second_Window)
 {
-   if (currentQuestion != 0)
+   if (currentQuestion != 0) // prechod na predchozi otazku
    {
       char tmpOdpovedi[sizeof(odpovedi) / sizeof(odpovedi[0])][sizeof(odpovedi[0]) / sizeof(char)] = {{0}};
       for (int i = 0; i < sizeof(tmpOdpovedi) / sizeof(tmpOdpovedi[0]); i++)
@@ -207,7 +199,7 @@ void on_Previous_button_clicked(GtkButton *Previous_button, GtkWidget *Second_Wi
       }
    }
 }
-
+// zjisteni stavu radiobuttonu
 void on_radio1_toggled(GtkToggleButton *radio1)
 {
    toggledRadio = 1;

@@ -3,7 +3,7 @@ GtkWidget *Second_window;
 GtkWidget *Third_window;
 GtkWidget *Fourth_window;
 GtkBuilder *builder;
-void Init()
+void Init() // inicializace prommenych pomoci builderu
 {
     window = GTK_WIDGET(gtk_builder_get_object(builder, "Main_Window"));
     Family_name = GTK_ENTRY(gtk_builder_get_object(builder, "Family_Name"));

@@ -134,7 +134,7 @@ void on_Previous_Button_3_clicked(GtkButton *Previous_button_3, GtkWidget *Fourt
 
         if (currentQuestion == 0)
         {
-            gtk_widget_set_sensitive(GTK_WIDGET(Previous_button), FALSE);
+            gtk_widget_set_sensitive(GTK_WIDGET(Previous_button_3), FALSE);
         }
     }
 }

@@ -32,7 +32,6 @@ void on_Third_Window_show(GtkWidget *Third_Window, GtkBox *Text_Box_2)
 void on_Next_Button_2_clicked(GtkButton *Next_Button_2, GtkWidget *Third_Window)
 {
     const gchar *selected = gtk_combo_box_get_active_id(odpovedi_2);
-    g_print("test %s", selected);
     if (selected[0] == '0')
     {
         selectedChoice = 0;
@@ -157,7 +156,7 @@ void on_Previous_Button_2_clicked(GtkButton *Previous_button_2, GtkWidget *Third
 
         if (currentQuestion == 0)
         {
-            gtk_widget_set_sensitive(GTK_WIDGET(Previous_button), FALSE);
+            gtk_widget_set_sensitive(GTK_WIDGET(Previous_button_2), FALSE);
         }
     }
 }

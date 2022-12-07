@@ -6,6 +6,7 @@
     <property name="can-focus">False</property>
     <property name="default-width">480</property>
     <property name="default-height">270</property>
+    <signal name="show" handler="on_Fourth_Window_show" object="Test_Box_3" swapped="no"/>
     <child>
       <object class="GtkBox" id="Test_Box_3">
         <property name="visible">True</property>
@@ -68,6 +69,7 @@
                 <property name="margin-left">40</property>
                 <property name="margin-start">40</property>
                 <property name="margin-bottom">30</property>
+                <signal name="clicked" handler="on_Previous_Button_3_clicked" object="Fourth_Window" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -87,6 +89,7 @@
                 <property name="margin-start">20</property>
                 <property name="margin-end">40</property>
                 <property name="margin-bottom">30</property>
+                <signal name="clicked" handler="on_Next_Button_3_clicked" object="Fourth_Window" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>

@@ -17,6 +17,7 @@ void Init()
     Radio4 = GTK_WIDGET(gtk_builder_get_object(builder, "radio4"));
     Otazka_label = GTK_WIDGET(gtk_builder_get_object(builder, "Otazka_Label"));
     Otazka_label_2 = GTK_WIDGET(gtk_builder_get_object(builder, "Otazka_Label_2"));
+    Otazka_label_3 = GTK_WIDGET(gtk_builder_get_object(builder, "Otazka_Label_3"));
 
     Radio_label1 = GTK_WIDGET(gtk_builder_get_object(builder, "Radio_Label1"));
     Radio_label2 = GTK_WIDGET(gtk_builder_get_object(builder, "Radio_Label2"));
@@ -27,8 +28,10 @@ void Init()
     Login_box = GTK_WIDGET(gtk_builder_get_object(builder, "Login_Box"));
     Next_button = GTK_BUTTON(gtk_builder_get_object(builder, "Next_Button"));
     Next_button_2 = GTK_BUTTON(gtk_builder_get_object(builder, "Next_Button_2"));
+    Next_button_3 = GTK_BUTTON(gtk_builder_get_object(builder, "Next_Button_3"));
     Previous_button = GTK_BUTTON(gtk_builder_get_object(builder, "Previous_Button"));
     Previous_button_2 = GTK_BUTTON(gtk_builder_get_object(builder, "Previous_Button_2"));
+    Previous_button_3 = GTK_BUTTON(gtk_builder_get_object(builder, "Previous_Button_3"));
     Result_window = GTK_WIDGET(gtk_builder_get_object(builder, "ResultWindow"));
     Correct_label = GTK_WIDGET(gtk_builder_get_object(builder, "Correct_Label"));
     Percent_label = GTK_WIDGET(gtk_builder_get_object(builder, "Percent_Label"));
@@ -37,4 +40,5 @@ void Init()
     Third_window = GTK_WIDGET(gtk_builder_get_object(builder, "Third_Window"));
     Fourth_window = GTK_WIDGET(gtk_builder_get_object(builder, "Fourth_Window"));
     odpovedi_2 = GTK_COMBO_BOX(gtk_builder_get_object(builder, "Odpovedi_2"));
+    odpovedi_3 = GTK_ENTRY(gtk_builder_get_object(builder, "fourth_entry"));
 }

@@ -1,0 +1,8 @@
+[Je gravitační zrychlení 9,81 m*s^-2 ?]
+(!1)
+
+[Je závislost termistoru NTC na teplotě lineární ?]
+(!0)
+
+[Je závislost magnetické indukce B na proudu lineární ?]
+(!1)

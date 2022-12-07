@@ -1,0 +1,8 @@
+[Jednotka pro napětí U ?]
+(!V)
+
+[Z hlediska vodivosti je křemík ?]
+(!polovodič)
+
+[Čím větší průřez vodiče, tím je elektrický odpor ?]
+(!menší)

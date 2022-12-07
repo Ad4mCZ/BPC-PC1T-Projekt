@@ -1,5 +1,5 @@
 #define MAX_LINES 100
-#define MAX_LENGTH 20
+#define MAX_LENGTH 200
 char data[MAX_LINES][MAX_LENGTH] = {{0}}; // 2d pole pro uchovavani radku
 char otazky[MAX_LINES][MAX_LENGTH] = {{0}};
 char odpovedi[MAX_LINES][MAX_LENGTH] = {{0}};
@@ -41,7 +41,6 @@ void Open_File(char *filename)
             {
                 for (int k = 1; data[i][j + k] != ')'; k++)
                 {
-                    // TADY DOPLNIT ZE POKUD PRVNI ZNAK JE ! TAK HO NECIST, ALE NEVIM JAK @Simon
                     odpovedi[indexOdpovedi][k - 1] = data[i][j + k];
                 }
                 indexOdpovedi++;

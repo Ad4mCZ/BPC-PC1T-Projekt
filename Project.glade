@@ -319,7 +319,9 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <signal name="clicked" handler="on_Popup_Yes_clicked" object="Main_Window" swapped="no"/>
-                <signal name="clicked" handler="on_Popup_Yes_clicked_add" object="Second_Window" swapped="no"/>
+                <signal name="clicked" handler="on_Popup_Yes_clicked_fourth" object="Fourth_Window" swapped="no"/>
+                <signal name="clicked" handler="on_Popup_Yes_clicked_second" object="Second_Window" swapped="no"/>
+                <signal name="clicked" handler="on_Popup_Yes_clicked_third" object="Third_Window" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -636,6 +638,7 @@
     <property name="can-focus">False</property>
     <property name="default-width">480</property>
     <property name="default-height">270</property>
+    <signal name="show" handler="on_Third_Window_show" object="Text_Box_2" swapped="no"/>
     <child>
       <object class="GtkBox" id="Text_Box_2">
         <property name="visible">True</property>
@@ -676,6 +679,8 @@
             <property name="margin-bottom">100</property>
             <property name="hexpand">True</property>
             <property name="vexpand">True</property>
+            <property name="active">0</property>
+            <property name="active-id">0</property>
             <items>
               <item id="1" translatable="yes">Ano</item>
               <item id="0" translatable="yes">Ne</item>
@@ -697,12 +702,14 @@
               <object class="GtkButton" id="Previous_Button_2">
                 <property name="label" translatable="yes">zpět</property>
                 <property name="visible">True</property>
+                <property name="sensitive">False</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="halign">end</property>
                 <property name="valign">end</property>
                 <property name="margin-start">40</property>
                 <property name="margin-bottom">30</property>
+                <signal name="clicked" handler="on_Previous_Button_2_clicked" object="Third_Window" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -721,6 +728,7 @@
                 <property name="margin-start">20</property>
                 <property name="margin-end">40</property>
                 <property name="margin-bottom">30</property>
+                <signal name="clicked" handler="on_Next_Button_2_clicked" object="Third_Window" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>

@@ -14,6 +14,7 @@ GtkWidget *Result_window;
 GtkWidget *Correctwrong;
 GtkWidget *Percent_label;
 GtkProgressBar *Correct_bar;
+time_t start, end;
 
 int currentAnswer = 0;
 int currentQuestion = 0;
@@ -23,6 +24,7 @@ char SpravneOdpovedi[sizeof(otazky) / sizeof(otazky[0])][sizeof(odpovedi[0]) / s
 
 void on_Second_Window_show(GtkWidget *Second_Window, GtkBox *Test_Box) // vypsani prvni otazky
 {
+   start = time(NULL);
    char tmpOdpovedi[sizeof(odpovedi) / sizeof(odpovedi[0])][sizeof(odpovedi[0]) / sizeof(char)] = {{0}};
    for (int i = 0; i < sizeof(tmpOdpovedi) / sizeof(tmpOdpovedi[0]); i++)
    {
@@ -141,17 +143,21 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkWidget *Second_Window)
             body++;
          }
       }
+      end = time(NULL);
+      double timedouble = difftime(end, start);
       gtk_widget_show(Result_window);
       gtk_widget_hide(Second_Window);
       char bodyArray[40];
       char percent[30];
+      char time[50];
       double Percent = (double)body / ((float)currentQuestion + 1);
       sprintf(bodyArray, "počet správných odpovědí: %d", body);
       sprintf(percent, "%0.2lf %%", Percent * 100);
-
+      sprintf(time, "Test ti zabral %0.0f sekund", timedouble);
       gtk_label_set_text(GTK_LABEL(Correct_label), (const gchar *)bodyArray);
       gtk_label_set_text(GTK_LABEL(Percent_label), (const gchar *)percent);
       gtk_progress_bar_set_fraction(Correct_bar, Percent);
+      gtk_label_set_text(GTK_LABEL(Correctwrong), (const gchar *)time);
    }
 
    if (otazky[currentQuestion + 1][0] == '\0') // check jestli posledni otazka

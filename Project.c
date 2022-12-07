@@ -5,6 +5,7 @@
 #include "on_next_button_clicked_third.h"
 #include "on_next_button_clicked_fourth.h"
 #include "init.h"
+#include "on_repeat_button_clicked.h"
 #include <time.h>
 
 int main(int argc, char *argv[])

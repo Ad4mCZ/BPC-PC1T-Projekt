@@ -390,9 +390,8 @@
     <property name="default-width">480</property>
     <property name="default-height">270</property>
     <property name="icon-name">dialog-question</property>
-    <signal name="show" handler="on_ResultWindow_show" object="Statistics_Grid" swapped="no"/>
     <child>
-      <!-- n-columns=2 n-rows=2 -->
+      <!-- n-columns=2 n-rows=3 -->
       <object class="GtkGrid" id="Statistics_Grid">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
@@ -445,6 +444,22 @@
             <property name="left-attach">0</property>
             <property name="top-attach">1</property>
           </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="Repeat_button">
+            <property name="label" translatable="yes">Začít odznova?</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_Repeat_button_clicked" object="Main_Window" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
         </child>
       </object>
     </child>

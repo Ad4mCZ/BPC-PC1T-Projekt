@@ -2,6 +2,108 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="Fourth_Window">
+    <property name="can-focus">False</property>
+    <property name="default-width">480</property>
+    <property name="default-height">270</property>
+    <child>
+      <object class="GtkBox" id="Test_Box_3">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="Otazka_Label_3">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="margin-left">30</property>
+            <property name="margin-right">30</property>
+            <property name="margin-start">30</property>
+            <property name="margin-end">30</property>
+            <property name="margin-top">30</property>
+            <property name="margin-bottom">20</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="label" translatable="yes">Otázka</property>
+            <property name="use-markup">True</property>
+            <property name="wrap">True</property>
+            <property name="wrap-mode">char</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="padding">10</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="halign">start</property>
+            <property name="margin-start">20</property>
+            <property name="margin-bottom">30</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">end</property>
+            <child>
+              <object class="GtkButton" id="Previous_Button_3">
+                <property name="label" translatable="yes">zpět</property>
+                <property name="visible">True</property>
+                <property name="sensitive">False</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="halign">end</property>
+                <property name="valign">center</property>
+                <property name="margin-left">40</property>
+                <property name="margin-start">40</property>
+                <property name="margin-bottom">30</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="Next_Button_3">
+                <property name="label" translatable="yes">další</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="valign">center</property>
+                <property name="margin-left">20</property>
+                <property name="margin-right">40</property>
+                <property name="margin-start">20</property>
+                <property name="margin-end">40</property>
+                <property name="margin-bottom">30</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkWindow" id="Main_Window">
     <property name="name">Test</property>
     <property name="can-focus">False</property>
@@ -286,7 +388,6 @@
           <object class="GtkLabel" id="Correct_Label">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">label</property>
             <property name="justify">center</property>
           </object>
           <packing>
@@ -513,7 +614,6 @@
                 <property name="margin-start">20</property>
                 <property name="margin-end">40</property>
                 <property name="margin-bottom">30</property>
-                <property name="hexpand">False</property>
                 <signal name="clicked" handler="on_Next_button_clicked" object="Second_Window" swapped="no"/>
               </object>
               <packing>
@@ -532,4 +632,111 @@
       </object>
     </child>
   </object>
+  <object class="GtkWindow" id="Third_Window">
+    <property name="can-focus">False</property>
+    <property name="default-width">480</property>
+    <property name="default-height">270</property>
+    <child>
+      <object class="GtkBox" id="Text_Box_2">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="Otazka_Label_2">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">start</property>
+            <property name="valign">center</property>
+            <property name="margin-start">30</property>
+            <property name="margin-end">30</property>
+            <property name="margin-top">30</property>
+            <property name="margin-bottom">20</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="label" translatable="yes">label</property>
+            <property name="use-markup">True</property>
+            <property name="wrap">True</property>
+            <property name="wrap-mode">char</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="padding">10</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBoxText" id="Odpovedi_2">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">start</property>
+            <property name="valign">start</property>
+            <property name="margin-start">20</property>
+            <property name="margin-top">10</property>
+            <property name="margin-bottom">100</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <items>
+              <item id="1" translatable="yes">Ano</item>
+              <item id="0" translatable="yes">Ne</item>
+            </items>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">end</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkButton" id="Previous_Button_2">
+                <property name="label" translatable="yes">zpět</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="halign">end</property>
+                <property name="valign">end</property>
+                <property name="margin-start">40</property>
+                <property name="margin-bottom">30</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="Next_Button_2">
+                <property name="label" translatable="yes">další</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="halign">center</property>
+                <property name="valign">end</property>
+                <property name="margin-start">20</property>
+                <property name="margin-end">40</property>
+                <property name="margin-bottom">30</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkListStore" id="liststore1"/>
 </interface>

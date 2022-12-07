@@ -9,8 +9,12 @@ GtkWidget *Radio_label3;
 GtkWidget *Radio_label4;
 GtkButton *Next_button;
 GtkButton *Previous_button;
-GtkWidget *Answer_label;
+GtkWidget *Correct_label;
 GtkWidget *Result_window;
+GtkWidget *Correctwrong;
+GtkWidget *Percent_label;
+GtkProgressBar *Correct_bar;
+
 
 int currentAnswer = 0;
 int currentQuestion = 0;
@@ -18,7 +22,7 @@ int toggledRadio = 1;
 char userAnswers[sizeof(otazky) / sizeof(otazky[0])][sizeof(odpovedi[0]) / sizeof(char)] = {{0}};
 char SpravneOdpovedi[sizeof(otazky) / sizeof(otazky[0])][sizeof(odpovedi[0]) / sizeof(char)] = {{0}};
 
-void on_Second_Window_show(GtkWidget *Second_window, GtkBox *Test_Box) // vypsani prvni otazky
+void on_Second_Window_show(GtkWidget *Second_Window, GtkBox *Test_Box) // vypsani prvni otazky
 {
    char tmpOdpovedi[sizeof(odpovedi) / sizeof(odpovedi[0])][sizeof(odpovedi[0]) / sizeof(char)] = {{0}};
    for (int i = 0; i < sizeof(tmpOdpovedi) / sizeof(tmpOdpovedi[0]); i++)
@@ -46,7 +50,7 @@ void on_Second_Window_show(GtkWidget *Second_window, GtkBox *Test_Box) // vypsan
    gtk_label_set_text(GTK_LABEL(Radio_label4), (const gchar *)tmpOdpovedi[3]);
 }
 
-void on_Next_button_clicked(GtkButton *Next_button, GtkBox *Test_Box)
+void on_Next_button_clicked(GtkButton *Next_button, GtkWidget *Second_Window)
 {
    const gchar *radio1 = {gtk_label_get_text(GTK_LABEL(Radio_label1))}; // ulozeni radio labels do promenne
    const gchar *radio2 = {gtk_label_get_text(GTK_LABEL(Radio_label2))};
@@ -138,9 +142,16 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkBox *Test_Box)
          }
       }
       gtk_widget_show(Result_window);
-      char bodyArray[2];
-      sprintf(bodyArray, "%d", body);
-      gtk_label_set_text(GTK_LABEL(Answer_label), (const gchar *)bodyArray);
+      gtk_widget_hide(Second_Window);
+      char bodyArray[40];
+      char percent[30];
+      double Percent=(double)body/3;
+      sprintf(bodyArray, "počet správných odpovědí: %d", body);
+      sprintf(percent,"%0.2lf %%",Percent*100);
+
+      gtk_label_set_text(GTK_LABEL(Correct_label),(const gchar *)bodyArray);
+      gtk_label_set_text(GTK_LABEL(Percent_label),(const gchar*)percent);
+      gtk_progress_bar_set_fraction(Correct_bar,Percent);
    }
 
    if (otazky[currentQuestion + 1][0] == '\0') // check jestli posledni otazka
@@ -149,7 +160,7 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkBox *Test_Box)
    }
 }
 
-void on_Previous_button_clicked(GtkButton *Previous_button, GtkBox *Test_Box)
+void on_Previous_button_clicked(GtkButton *Previous_button, GtkWidget *Second_Window)
 {
    if (currentQuestion != 0)
    {

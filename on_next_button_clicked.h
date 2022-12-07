@@ -15,7 +15,6 @@ GtkWidget *Correctwrong;
 GtkWidget *Percent_label;
 GtkProgressBar *Correct_bar;
 
-
 int currentAnswer = 0;
 int currentQuestion = 0;
 int toggledRadio = 1;
@@ -131,6 +130,7 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkWidget *Second_Window)
       gtk_widget_set_sensitive(GTK_WIDGET(Previous_button), TRUE);
    }
    int body = 0;
+
    if (strcmp(gtk_button_get_label(Next_button), "konec") == 0)
    {
 
@@ -145,13 +145,13 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkWidget *Second_Window)
       gtk_widget_hide(Second_Window);
       char bodyArray[40];
       char percent[30];
-      double Percent=(double)body/3;
+      double Percent = (double)body / ((float)currentQuestion + 1);
       sprintf(bodyArray, "počet správných odpovědí: %d", body);
-      sprintf(percent,"%0.2lf %%",Percent*100);
+      sprintf(percent, "%0.2lf %%", Percent * 100);
 
-      gtk_label_set_text(GTK_LABEL(Correct_label),(const gchar *)bodyArray);
-      gtk_label_set_text(GTK_LABEL(Percent_label),(const gchar*)percent);
-      gtk_progress_bar_set_fraction(Correct_bar,Percent);
+      gtk_label_set_text(GTK_LABEL(Correct_label), (const gchar *)bodyArray);
+      gtk_label_set_text(GTK_LABEL(Percent_label), (const gchar *)percent);
+      gtk_progress_bar_set_fraction(Correct_bar, Percent);
    }
 
    if (otazky[currentQuestion + 1][0] == '\0') // check jestli posledni otazka

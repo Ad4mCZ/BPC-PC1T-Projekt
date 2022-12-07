@@ -19,6 +19,8 @@ void on_Confirm_Button_clicked(GtkButton *Confirm_Button, GtkWidget *Popup_Confi
 void on_Popup_Yes_clicked_add(GtkButton *Popup_Yes, GtkWidget *Second_window)
 {
         gtk_widget_show(Second_window);
+        // time_t = start, end;
+        // start = time(NULL);
 }
 
 void on_Popup_Yes_clicked(GtkButton *Popup_Yes, GtkWidget *window)

@@ -293,6 +293,23 @@
             <property name="position">1</property>
           </packing>
         </child>
+        <child>
+          <object class="GtkButton" id="Statistics_Button">
+            <property name="label" translatable="yes">Statistiky</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="margin-bottom">20</property>
+            <signal name="clicked" handler="on_Statistics_Button_clicked" object="Statistics_Window" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
       </object>
     </child>
   </object>
@@ -390,6 +407,7 @@
     <property name="default-width">480</property>
     <property name="default-height">270</property>
     <property name="icon-name">dialog-question</property>
+    <signal name="show" handler="on_ResultWindow_show" object="Statistics_Grid" swapped="no"/>
     <child>
       <!-- n-columns=2 n-rows=3 -->
       <object class="GtkGrid" id="Statistics_Grid">
@@ -447,10 +465,12 @@
         </child>
         <child>
           <object class="GtkButton" id="Repeat_button">
-            <property name="label" translatable="yes">Začít odznova?</property>
+            <property name="label" translatable="yes">Znovu zkusit</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
             <signal name="clicked" handler="on_Repeat_button_clicked" object="Main_Window" swapped="no"/>
           </object>
           <packing>
@@ -665,6 +685,149 @@
             <property name="fill">True</property>
             <property name="position">2</property>
           </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="Statistics_Window">
+    <property name="can-focus">False</property>
+    <property name="default-width">480</property>
+    <property name="default-height">270</property>
+    <child>
+      <!-- n-columns=3 n-rows=4 -->
+      <object class="GtkGrid" id="Statistics_Gri">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="row-homogeneous">True</property>
+        <property name="column-homogeneous">True</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Matematika</property>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Fyzika</property>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Elektrotechnika</property>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="Tests_MAT">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">label</property>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="Tests_FYZ">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">label</property>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="Tests_ELZ">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">label</property>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="Percent_MAT">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">label</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="Percent_FYZ">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">label</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="Percent_ELZ">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">label</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans Bold 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="Return_Button">
+            <property name="label" translatable="yes">Zpět</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <signal name="clicked" handler="on_Return_Button_clicked" object="Main_Window" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">3</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
         </child>
       </object>
     </child>

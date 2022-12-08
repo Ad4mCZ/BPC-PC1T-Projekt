@@ -42,4 +42,5 @@ void Init() // inicializace prommenych pomoci builderu
     odpovedi_2 = GTK_COMBO_BOX(gtk_builder_get_object(builder, "Odpovedi_2"));
     odpovedi_3 = GTK_ENTRY(gtk_builder_get_object(builder, "fourth_entry"));
     // repeat_button = GTK_BUTTON(gtk_builder_get_object(builder), "Repeat_button");
+    Statistics_window = GTK_WIDGET(gtk_builder_get_object(builder, "Statistics_Window"));
 }

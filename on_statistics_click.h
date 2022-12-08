@@ -24,10 +24,10 @@ void on_Statistics_Window_show(GtkWidget *Statistics_Window)
     {
         procenta += atof(stat_math[i]);
     }
-    char percent[10];
+    char percent[30];
     char lines[20];
     procenta = procenta / line * 100;
-    sprintf(percent, "%0.2lf %%", procenta);
+    sprintf(percent, "Úspěšnost: %0.2lf %%", procenta);
     sprintf(lines, "Počet testů: %d", line);
     gtk_label_set_text(GTK_LABEL(Percent_mat), percent);
     gtk_label_set_text(GTK_LABEL(Tests_mat), lines);
@@ -49,7 +49,7 @@ void on_Statistics_Window_show(GtkWidget *Statistics_Window)
         procenta += atof(stat_fyz[i]);
     }
     procenta = procenta / line * 100;
-    sprintf(percent, "%0.2lf %%", procenta);
+    sprintf(percent, "Úspěšnost: %0.2lf %%", procenta);
     sprintf(lines, "Počet testů: %d", line);
     gtk_label_set_text(GTK_LABEL(Percent_fyz), percent);
     gtk_label_set_text(GTK_LABEL(Tests_fyz), lines);
@@ -70,7 +70,7 @@ void on_Statistics_Window_show(GtkWidget *Statistics_Window)
         procenta += atof(stat_ele[i]);
     }
     procenta = procenta / line * 100;
-    sprintf(percent, "%0.2lf %%", procenta);
+    sprintf(percent, "Úspěšnost: %0.2lf %%", procenta);
     sprintf(lines, "Počet testů: %d", line);
     gtk_label_set_text(GTK_LABEL(Percent_ele), percent);
     gtk_label_set_text(GTK_LABEL(Tests_ele), lines);

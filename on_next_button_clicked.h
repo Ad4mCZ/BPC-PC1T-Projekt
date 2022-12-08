@@ -135,6 +135,7 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkWidget *Second_Window)
             body++;
          }
       }
+
       end = time(NULL); // ukonceni timeru
       double timedouble = difftime(end, start);
       gtk_widget_show(Result_window); // zavreni okna a otevreni okna vysledku
@@ -143,6 +144,9 @@ void on_Next_button_clicked(GtkButton *Next_button, GtkWidget *Second_Window)
       char percent[30];
       char time[50];
       double Percent = (double)body / ((float)currentQuestion + 1);
+      currentAnswer = 0;
+      currentQuestion = 0;
+      gtk_button_set_label(Next_button, "další");
       sprintf(bodyArray, "počet správných odpovědí: %d", body); // prevod z intu/floatu na gchar a vypis vysledku
       sprintf(percent, "%0.2lf %%", Percent * 100);
       sprintf(time, "Test ti zabral %0.0f sekund", timedouble);

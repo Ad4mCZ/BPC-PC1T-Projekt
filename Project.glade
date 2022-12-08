@@ -407,7 +407,6 @@
     <property name="default-width">480</property>
     <property name="default-height">270</property>
     <property name="icon-name">dialog-question</property>
-    <signal name="show" handler="on_ResultWindow_show" object="Statistics_Grid" swapped="no"/>
     <child>
       <!-- n-columns=2 n-rows=3 -->
       <object class="GtkGrid" id="Statistics_Grid">
@@ -693,6 +692,7 @@
     <property name="can-focus">False</property>
     <property name="default-width">480</property>
     <property name="default-height">270</property>
+    <signal name="show" handler="on_Statistics_Window_show" swapped="no"/>
     <child>
       <!-- n-columns=3 n-rows=4 -->
       <object class="GtkGrid" id="Statistics_Gri">

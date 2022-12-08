@@ -95,6 +95,10 @@ void on_Next_Button_3_clicked(GtkButton *Next_Button_3, GtkWidget *Fourth_Window
         gtk_label_set_text(GTK_LABEL(Percent_label), (const gchar *)percent);
         gtk_progress_bar_set_fraction(Correct_bar, Percent);
         gtk_label_set_text(GTK_LABEL(Correctwrong), (const gchar *)time);
+        FILE *stats;
+        stats = fopen("stats_elektro.txt", "a+");
+        fprintf(stats, "\n%f", Percent);
+        fclose(stats);
     }
     if (otazky[currentQuestion + 1][0] == '\0') // check jestli posledni otazka
     {

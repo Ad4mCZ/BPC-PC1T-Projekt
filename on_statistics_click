@@ -1,4 +1,0 @@
-void on_Statistics_Button_clicked (GtkButton *Statistics_Button, GtkWidget *Statistics_Window){
-    gtk_widget_hide(window);
-    gtk_widget_show(Statistics_Window);
-}

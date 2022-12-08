@@ -3,6 +3,12 @@ GtkWidget *Second_window;
 GtkWidget *Third_window;
 GtkWidget *Fourth_window;
 GtkBuilder *builder;
+GtkWidget *Percent_mat;
+GtkWidget *Tests_mat;
+GtkWidget *Percent_fyz;
+GtkWidget *Tests_fyz;
+GtkWidget *Percent_ele;
+GtkWidget *Tests_ele;
 void Init() // inicializace prommenych pomoci builderu
 {
     window = GTK_WIDGET(gtk_builder_get_object(builder, "Main_Window"));
@@ -43,4 +49,10 @@ void Init() // inicializace prommenych pomoci builderu
     odpovedi_3 = GTK_ENTRY(gtk_builder_get_object(builder, "fourth_entry"));
     // repeat_button = GTK_BUTTON(gtk_builder_get_object(builder), "Repeat_button");
     Statistics_window = GTK_WIDGET(gtk_builder_get_object(builder, "Statistics_Window"));
+    Percent_mat = GTK_WIDGET(gtk_builder_get_object(builder, "Percent_MAT"));
+    Tests_mat = GTK_WIDGET(gtk_builder_get_object(builder, "Tests_MAT"));
+    Percent_fyz = GTK_WIDGET(gtk_builder_get_object(builder, "Percent_FYZ"));
+    Tests_fyz = GTK_WIDGET(gtk_builder_get_object(builder, "Tests_FYZ"));
+    Percent_ele = GTK_WIDGET(gtk_builder_get_object(builder, "Percent_ELZ"));
+    Tests_ele = GTK_WIDGET(gtk_builder_get_object(builder, "Tests_ELZ"));
 }

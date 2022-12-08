@@ -6,7 +6,7 @@
 #include "on_next_button_clicked_fourth.h"
 #include "on_return_click.h"
 #include "init.h"
-#include "on_statistics_click"
+#include "on_statistics_click.h"
 #include "on_repeat_button_clicked.h"
 #include <time.h>
 
